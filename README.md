@@ -17,3 +17,5 @@ Also you can add this alias:
 Then you can run `gitrep go <shortname>` to change your directory on the attached to shortname.
 
 Or you can print `gitgo <shortname>`, if second alias is added
+
+To see help, run `gitrep` or `gitrep help`.
