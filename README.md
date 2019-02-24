@@ -16,6 +16,6 @@ Also you can add this alias:
 
 To change your directory on the attached to shortname, run `myway go <shortname>`.
 
-if second alias is added, run `waygo <shortname>`.
+If second alias is added, run `waygo <shortname>`.
 
 To see help, run `myway` or `myway help`.
