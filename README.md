@@ -1,7 +1,7 @@
 # MyWay
 Give a shortname for your long-path directories and then access them easily.
 
-# Instalation
+# Installation
 1. Clone the repository 
 2. Run: `chmod u+x myway`
 3. Add alias to your .bashrc:
