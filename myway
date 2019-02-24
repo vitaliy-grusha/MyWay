@@ -2,7 +2,7 @@
 
 ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 command="$1"
-filename="$ABSOLUTE_PATH/gitrep.data"
+filename="$ABSOLUTE_PATH/myway.data"
 
 if [ ! -e "$filename" ]; then
     echo -n "" >> "$filename"
@@ -37,12 +37,12 @@ if [ "$command" == "add" ] ; then
 		path="${data##*=}"
 
 		if [ "$name" == "$2" ]; then
-	    	echo "GitRep: this name is already exists."
+	    	echo "MyWay: this name is already exists."
 			exists="1"
 			break
 		fi
 		if [ "$path" == "$newpath" ]; then
-	    	echo "GitRep: this path is already exists."
+	    	echo "MyWay: this path is already exists."
 			exists="1"
 			break
 		fi
@@ -50,13 +50,13 @@ if [ "$command" == "add" ] ; then
 	done < "$filename"
 	if [ "$exists" == "0" ] ; then
 		echo "$2=$newpath" >> $filename
-		echo "GitRep: repository added to list."
+		echo "MyWay: repository added to list."
 	fi
 fi
 
 if [ "$command" == "delete" ] ; then
-	echo -n "" >> "gitrepnew.data"
-	truncate -s 0 "gitrepnew.data"
+	echo -n "" >> "mywaynew.data"
+	truncate -s 0 "mywaynew.data"
 	while read -r line
 	do
 	    data="$line"
@@ -64,13 +64,13 @@ if [ "$command" == "delete" ] ; then
 		path="${data##*=}"
 
 		if [ "$name" == "$2" ]; then
-	    	echo "GitRep: repository name deleted."
+	    	echo "MyWay: repository name deleted."
 		else 
-			echo "$line" >> "gitrepnew.data"
+			echo "$line" >> "mywaynew.data"
 		fi
 
 	done < "$filename"
-	mv "gitrepnew.data" "$filename"
+	mv "mywaynew.data" "$filename"
 fi
 
 if [ "$command" == "list" ] ; then
